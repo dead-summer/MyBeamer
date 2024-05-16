@@ -1,0 +1,253 @@
+\frame[plain]{\titlepage}
+\frame{\frametitle{Outline}\tableofcontents}
+
+\section{Text}
+
+\begin{frame}
+    \frametitle{Text test}
+    
+    Night gathers, and now my watch begins.
+    It shall not end until my death.
+    I shall take no wife, hold no lands, father no children.
+    I shall wear no crowns and win no glory.
+    I shall live and die at my post.
+
+    \vspace{0.4cm}
+
+    \pause
+
+    Night gathers, and now my watch begins.
+    It shall not end until my death.
+    I shall take no wife, hold no lands, father no children.
+    I shall wear no crowns and win no glory.
+    I shall live and die at my post.
+    
+\end{frame}
+
+\section{Beamer Basic}
+\subsection{Beamer Blocks}
+
+\begin{frame}
+    \frametitle{Basic Blocks}
+
+    \begin{block}{Standard Block}
+        This is a standard block.
+    \end{block}
+    \begin{alertblock}{Alert Message}
+        This block presents alert message.
+    \end{alertblock}
+    \begin{exampleblock}{An example of typesetting tool}
+        Example: MS Word, \LaTeX{}
+    \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Math Blocks}
+
+    \begin{definition} 
+        This is a definition.
+    \end{definition}
+    
+    \begin{theorem} 
+        This is a theorem. 
+    \end{theorem}
+    
+    \begin{lemma} 
+        This is a proof idea.
+    \end{lemma}
+
+\end{frame}
+
+\begin{frame}
+    \begin{proof} 
+        This is a proof. 
+    \end{proof}
+    
+    \begin{corollary}
+        This is a corollary
+    \end{corollary}
+    
+    \begin{example}
+        This is an example 
+    \end{example}
+
+\end{frame}
+
+\subsection{Other Environments}
+
+\begin{frame}{Algorithm}
+    \scriptsize
+    \begin{algorithm}[H]
+        \KwData{this text}
+        \KwResult{how to write algorithm with \LaTeX2e }
+        initialization\;
+        \While{not at end of this document}{
+            read current\;
+            \eIf{understand}{
+            go to next section\;
+            current section becomes this one\;
+            }{
+            go back to the beginning of current section\;
+            }
+        }
+        \caption{How to write algorithms
+        (copied from \href{https://en.wikibooks.org/wiki/LaTeX/Algorithms}{here})}
+        \end{algorithm}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{An Algorithm For Finding Primes Numbers.}
+    \scriptsize
+    \begin{verbatim}
+        int main (void)
+        {
+            std::vector<bool> is_prime (100, true);
+            for (int i = 2; i < 100; i++)
+            if (is_prime[i])
+            {
+                std::cout << i << " ";
+                for (int j = i; j < 100; is_prime [j] = false, j+=i);
+            }
+            return 0;
+        }
+    \end{verbatim}
+
+    \vspace{-0.7cm}
+
+    \begin{uncoverenv}
+    Note the use of \verb|\alert|.
+    \end{uncoverenv}
+\end{frame}
+
+\section{Beamer More}
+\subsection{Split Screen}
+
+\begin{frame}{Minipage}
+
+
+\begin{minipage}{.27\textwidth}
+    \begin{block}{}
+        \centering itemize
+    \end{block}
+    \begin{itemize}
+        \item test 1
+        \item \textit{test 2}
+        \item \textbf{test 3}
+        \item \textbf{\textit{test 4}}
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{.27\textwidth}
+    \begin{block}{}
+        \centering enumerate
+    \end{block}
+    \begin{enumerate}
+        \item test 1
+        \item \textit{test 2}
+        \item \textbf{test 3}
+        \item \textbf{\textit{test 4}}
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}{.35\textwidth}
+    \begin{block}{}
+        \centering description
+    \end{block}
+    \begin{description}
+        \item[normal] test 1
+        \item[italic] \textit{test 2}
+        \item[bold] \textbf{test 3}
+        \item[italic and bold] \textbf{\textit{test 4}}
+    \end{description}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        This is a text in first column.
+        $$E=mc^2$$
+        \begin{itemize}
+        \item First item
+        \item Second item
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \begin{block}{first block}
+            columns achieves splitting the screen
+        \end{block}
+        \begin{block}{second block}
+            stack block in columns
+        \end{block}
+        
+    \end{columns}
+\end{frame}
+
+\subsection{Table}
+
+\begin{frame}{Create Tables}
+    \begin{center}
+        \begin{table}[!t]  
+            % \caption{Three line}
+            % \label{table_time}
+            \begin{tabular}{ccc}  
+                \toprule   
+                first&second&third\\ 
+                \midrule       
+                1 & 2 & 3 \\ 
+                4 & 5 & 6 \\ 
+                7 & 8 & 9 \\
+                \bottomrule  
+            \end{tabular}
+        \end{table}
+    \end{center}
+\end{frame}
+
+\subsection{Math}
+
+\begin{frame}{Equation1}
+    A matrix in text must be set  smaller:
+    $\bigl(\begin{smallmatrix}
+    a&b \\ c&d
+    \end{smallmatrix} \bigr)$
+    to not increase leading in a portion of text.
+
+    \[ f(n) =
+    \begin{cases}
+        n/2       & \quad \text{if } n \text{ is even}\\
+        -(n+1)/2  & \quad \text{if } n \text{ is odd}
+    \end{cases}
+    \]
+
+    $$50 apples \times 100 apples = lots of apples^2$$
+\end{frame}
+
+\begin{frame}{Equation2}
+    $$\sum_{\substack{0<i<m \\ 0<j<n }} 
+      P(i,j)=\int\limits_a^b\prod P(i,j)$$
+
+    $$P\left(A=2\middle|\frac{A^2}{B}>4\right)$$
+
+    $$( a ), [ b ], \{ c \}, | d |, \| e \|,
+    \langle f \rangle, \lfloor g \rfloor,
+    \lceil h \rceil, \ulcorner i \urcorner$$
+\end{frame}
+
+\begin{frame}{Equation3}
+    $$Q(\alpha)=\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)$$
+
+    $$Q(\alpha)=\alpha^i\alpha^jy^{(i)}y^{(j)}(x^i\cdot x^j)$$
+    
+    $$\Gamma=\beta+\alpha+\gamma+\rho$$
+\end{frame}
+
+
+
+\section*{Q\&A}
+\begin{frame}
+    \centering
+    \vspace{2.2cm}
+
+    \structure{\fontsize{30pt}{35pt}\selectfont\textbf{Q{\Huge\&}A}}
+
+    \vspace{0.4cm}{\Large\itshape \faSlideshare~Looking Forward to Your Comments!}
+\end{frame}

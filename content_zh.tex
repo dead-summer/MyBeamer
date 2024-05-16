@@ -1,0 +1,249 @@
+\frame[plain]{\titlepage}
+\frame{\frametitle{Outline}\tableofcontents}
+
+\section{文字环境}
+
+\begin{frame}
+    \frametitle{文字测试}
+    
+    长夜将至，我从今开始守望，至死方休。
+    我将不娶妻、不封地、不生子。
+    我将不戴宝冠，不争荣宠。
+    我将尽忠职守，生死于斯。
+
+    \vspace{0.4cm}
+
+    \pause
+
+    长夜将至，我从今开始守望，至死方休。
+    我将不娶妻、不封地、不生子。
+    我将不戴宝冠，不争荣宠。
+    我将尽忠职守，生死于斯。
+    
+\end{frame}
+
+\section{块和其他环境}
+\subsection{块}
+
+\begin{frame}
+    \frametitle{基础块环境}
+
+    \begin{block}{标准块}
+        这是一个标准块。
+    \end{block}
+    \begin{alertblock}{Alert 块}
+        这是一个 Alert 块
+    \end{alertblock}
+    \begin{exampleblock}{排版工具}
+        例如: MS Word, \LaTeX{}
+    \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Math Blocks}
+
+    \begin{definition} 
+        定义环境。
+    \end{definition}
+    
+    \begin{theorem} 
+        定理环境。
+    \end{theorem}
+    
+    \begin{lemma} 
+        引理环境。
+    \end{lemma}
+
+\end{frame}
+
+\begin{frame}
+    \begin{proof} 
+        证明环境。
+    \end{proof}
+    
+    \begin{corollary}
+        推论环境。
+    \end{corollary}
+    
+    \begin{example}
+        example 环境。
+    \end{example}
+
+\end{frame}
+
+\subsection{其他环境}
+
+\begin{frame}{算法环境}
+    \scriptsize
+    \begin{algorithm}[H]
+        \KwData{本文}
+        \KwResult{如何用 \LaTeX2e 书写算法伪代码}
+        initialization\;
+        \While{本文尚未结束}{
+            观看本节\;
+            \eIf{理解本节}{
+            查看下一节\;
+            当前章节更新为新的一节\;
+            }{
+            回到本节开始\;
+            }
+        }
+        \caption{如何书写算法伪代码
+        (参考 \href{https://en.wikibooks.org/wiki/LaTeX/Algorithms}{此文})}
+        \end{algorithm}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{查找素数}
+    \scriptsize
+    \begin{verbatim}
+        int main (void)
+        {
+            std::vector<bool> is_prime (100, true);
+            for (int i = 2; i < 100; i++)
+            if (is_prime[i])
+            {
+                std::cout << i << " ";
+                for (int j = i; j < 100; is_prime [j] = false, j+=i);
+            }
+            return 0;
+        }
+    \end{verbatim}
+
+    \vspace{-0.7cm}
+
+    \begin{uncoverenv}
+    注意使用 \verb|\alert|.
+    \end{uncoverenv}
+\end{frame}
+
+\section{更多}
+\subsection{多栏并排}
+
+\begin{frame}{Minipage}
+
+
+\begin{minipage}{.27\textwidth}
+    \begin{block}{}
+        \centering itemize
+    \end{block}
+    \begin{itemize}
+        \item 测试 1
+        \item \textit{测试 2}
+        \item \textbf{测试 3}
+        \item \textbf{\textit{测试 4}}
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{.27\textwidth}
+    \begin{block}{}
+        \centering enumerate
+    \end{block}
+    \begin{enumerate}
+        \item 测试 1
+        \item \textit{测试 2}
+        \item \textbf{测试 3}
+        \item \textbf{\textit{测试 4}}
+    \end{enumerate}
+\end{minipage}
+\begin{minipage}{.35\textwidth}
+    \begin{block}{}
+        \centering description
+    \end{block}
+    \begin{description}
+        \item[普通] 测试 1
+        \item[斜体] \textit{测试 2}
+        \item[粗体] \textbf{测试 3}
+        \item[斜粗体] \textbf{\textit{测试 4}}
+    \end{description}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        左列
+        $$E=mc^2$$
+        \begin{itemize}
+        \item 测试 1
+        \item 测试 2
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \begin{block}{测试 1}
+            文字测试。
+        \end{block}
+        \begin{block}{测试 2}
+            文字测试。
+        \end{block}
+        
+    \end{columns}
+\end{frame}
+
+\subsection{表格}
+
+\begin{frame}{创建表格}
+    \begin{center}
+        \begin{table}[!t]  
+            \begin{tabular}{ccc}  
+                \toprule   
+                第一&第二&第三\\ 
+                \midrule       
+                1 & 2 & 3 \\ 
+                4 & 5 & 6 \\ 
+                7 & 8 & 9 \\
+                \bottomrule  
+            \end{tabular}
+        \end{table}
+    \end{center}
+\end{frame}
+
+\subsection{数学公式}
+
+\begin{frame}{公式 1}
+    行内公式：
+    $\bigl(\begin{smallmatrix}
+    a&b \\ c&d
+    \end{smallmatrix} \bigr)$，
+    行间公式：
+
+    \[ f(n) =
+    \begin{cases}
+        n/2       & \quad \text{if } n \text{ is even}\\
+        -(n+1)/2  & \quad \text{if } n \text{ is odd}
+    \end{cases}
+    \]
+
+    $$50 apples \times 100 apples = lots of apples^2$$
+\end{frame}
+
+\begin{frame}{公式 2}
+    $$\sum_{\substack{0<i<m \\ 0<j<n }} 
+      P(i,j)=\int\limits_a^b\prod P(i,j)$$
+
+    $$P\left(A=2\middle|\frac{A^2}{B}>4\right)$$
+
+    $$( a ), [ b ], \{ c \}, | d |, \| e \|,
+    \langle f \rangle, \lfloor g \rfloor,
+    \lceil h \rceil, \ulcorner i \urcorner$$
+\end{frame}
+
+\begin{frame}{公式 3}
+    $$Q(\alpha)=\alpha_i\alpha_jy_iy_j(x_i\cdot x_j)$$
+
+    $$Q(\alpha)=\alpha^i\alpha^jy^{(i)}y^{(j)}(x^i\cdot x^j)$$
+    
+    $$\Gamma=\beta+\alpha+\gamma+\rho$$
+\end{frame}
+
+
+
+\section*{Q\&A}
+\begin{frame}
+    \centering
+    \vspace{2.2cm}
+
+    \structure{\fontsize{30pt}{35pt}\selectfont\textbf{Q{\Huge\&}A}}
+
+    \vspace{0.4cm}{\Large\itshape \faSlideshare~希望老师批评指正！}
+\end{frame}

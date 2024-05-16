@@ -1,0 +1,22 @@
+# 编译时候的复制文件
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.synctex(busy)
+*.vrb
+*.pdf
+*.nav
+*.snm
+*.synctex.gz
+
+# 统计字数的辅助文件
+._wordcount_selection.tex
