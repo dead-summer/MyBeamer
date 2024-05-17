@@ -1,0 +1,68 @@
+\usetheme{metropolis} % 基础主题
+\useoutertheme[subsection=false]{miniframes} % navigation 主题
+
+% 目录设置
+\setbeamertemplate{section in toc}[sections numbered] % section 编号
+\setbeamertemplate{subsection in toc}[square] % subsection 标记方块
+
+% block 设置
+\setbeamertemplate{blocks}[rounded][shadow=false] % 添加轮廓、阴影
+
+% 字体设置
+% 中文字体
+\setCJKsansfont[
+    BoldItalicFont={LXGWWENKAI-BOLD.TTF},
+    BoldFont={SOURCEHANSANSCN-BOLD.OTF},
+    ItalicFont={LXGWWENKAI-REGULAR.TTF}]{SOURCEHANSANSCN-REGULAR.OTF}
+
+
+% 图片路径
+\graphicspath{{./}{./img/}{./fig/}{./image/}{./figure/}{./picture/}{../image/}{./LOGO_images}}
+
+
+% 颜色设置
+% 基础调色板颜色
+\definecolor{pri}{RGB}{231, 70, 70}
+\definecolor{sec}{RGB}{250, 152, 132}
+\definecolor{ter}{RGB}{255, 243, 226}
+
+% alert 块颜色设置
+\definecolor{ale}{HTML}{FF7E67}
+
+\setbeamercolor{title}{fg=pri}
+\setbeamercolor{title separator}{fg=pri}
+\setbeamercolor{author}{fg=sec}
+\setbeamercolor{institute}{fg=sec}
+\setbeamercolor{date}{fg=sec}
+
+\setbeamercolor*{palette primary}{fg=white,bg=pri}
+\setbeamercolor*{palette secondary}{fg=white,bg=sec}
+\setbeamercolor*{palette tertiary}{fg=pri,bg=ter}
+
+\setbeamercolor{alerted text}{fg=ale}
+\setbeamercolor*{block title}{bg=pri!20!white}
+\setbeamercolor{block body}{bg=sec!10!white}
+
+
+% 字体颜色
+\setbeamercolor{normal text}{fg=pri!1!black}
+
+% 标题栏添加 logo
+\newcommand{\frametitlelogo}[1]{
+    \frametitle{
+        \makebox[\framewidth]{
+            \bfseries #1 \hfill\raisebox{-1.5ex}{
+                \includegraphics[height=1cm]{XDUlogo-w.png}
+                }
+            }
+        }
+    }
+% title page 添加 logo
+\usepackage{tikz}
+\titlegraphic { 
+\begin{tikzpicture}[overlay,remember picture]
+\node[left=0.75cm] at (current page.10){
+    \includegraphics[width=2cm]{logo.pdf}
+};
+\end{tikzpicture}
+}
