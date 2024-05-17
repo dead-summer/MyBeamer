@@ -1,7 +1,5 @@
-\documentclass[compress, aspectratio=169]{beamer}
-% \documentclass[compress, aspectratio=169]{ctexbeamer}
-\usetheme{Berlin}
-\usecolortheme{beaver}
+% \documentclass[compress, aspectratio=169]{beamer}
+\documentclass[compress, aspectratio=169]{ctexbeamer}
 
 % 宏包
 \usepackage{fancyhdr} % 标题，页脚
@@ -9,12 +7,16 @@
 \usepackage{algorithm2e}
 \usepackage{booktabs} % 定义表格的画线命令
 \usepackage{xcolor}
-% \usepackage{bookmark}
 \usepackage{fontawesome5} % 小图标
 
+% 导入配置
+\input{mytheme.tex}
+
+% title page
 \author{Your Name}
 \title{Beamer Theme}
 
+
 \begin{document}
-    \input{content_en.tex}
+    \input{content_zh.tex}
 \end{document}
